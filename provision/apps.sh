@@ -2,10 +2,13 @@
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
 evince \ 
-filezilla \
-gpicview \
 kupfer \
-leafpad
+leafpad \
+vim
 
-# mousepad
-# gedit
+
+# NOT USED YET OR OPTIONAL REPLACEMENTS
+# mousepad \
+# gedit \
+# filezilla \
+# gpicview \
