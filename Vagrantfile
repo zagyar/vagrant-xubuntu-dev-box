@@ -6,6 +6,9 @@ Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/xenial64'
   config.vm.box_check_update = false
 
+  # Share an additional folder to the guest VM
+  config.vm.synced_folder 'data', '/vagrant_data'
+
   # Proxy Configuration 
   # (expect: vagrant plugin install vagrant-proxyconf)
   config.proxy.http     = "http://baligw.mitrais.com:8080"
