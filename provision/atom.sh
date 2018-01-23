@@ -1,6 +1,9 @@
 #!/bin/sh
+
+# Add Repo
 sudo apt-add-repository -y ppa:webupd8team/atom
 sudo apt-get update
+# Install Atom IDE
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install atom
 apm config set strict-ssl false
 # Generic packages

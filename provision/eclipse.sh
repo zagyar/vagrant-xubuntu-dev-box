@@ -18,11 +18,13 @@
 
 
 
-
-if [ ! -f /vagrant/share/ideaIC-2017.1.2-no-jdk.tar.gz ]; then
+# Download Eclipse IDE into shared folder
+if [ ! -f /vagrant_data/eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz ]; then
   echo 'Downloading Eclipse C++ Oxygen Edition'
   curl -fsSL --output /vagrant_data/eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz http://eclipse.bluemix.net/packages/oxygen.2/data/eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz
 fi
+
+# Unpack into /opt
 sudo tar -zxf /vagrant_data/eclipse-cpp-oxygen-2-linux-gtk-x86_64.tar.gz --directory /opt
 
 # Set Eclipse global accessable 

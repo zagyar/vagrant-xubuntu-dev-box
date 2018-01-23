@@ -1,6 +1,10 @@
 #!/bin/sh
+
+# Add Repo
 sudo apt-add-repository -y ppa:git-core/ppa
 sudo apt-get update
+
+# Install git
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install git
 git config --global alias.serve 'daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/'
 git config --global alias.st status

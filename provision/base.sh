@@ -1,5 +1,6 @@
 #!/bin/sh
-sudo apt-get update
+
+# Install base and common tools we need
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
 bzip2 \
 ca-certificates \
