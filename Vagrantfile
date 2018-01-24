@@ -60,6 +60,9 @@ Vagrant.configure(2) do |config|
   # config.vm.provision "shell", inline: "sudo xfconf-query -c xsettings -p /Xft/DPI -s 96"
 
   # Permit anyone to start the GUI
-  config.vm.provision "shell", inline: "sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config"
+  config.vm.provision "shell", inline: "sudo echo 'allowed_users=anybody' &amp;gt; /etc/X11/Xwrapper.config"
+  config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /home/vagrant/.xsession"
+  config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /root/.xsession"
+  
 
 end
