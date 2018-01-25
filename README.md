@@ -1,9 +1,9 @@
-# vagrant-xubuntu-dev-box
+# Vagrant XFCE Dev-Env
 
-A vagrant based spinnup to provide a development environment using [Ubuntu](https://xubuntu.org/). 
+A portable virtual development environment using based on [Vagrant](https://www.vagrantup.com/) and [Ubuntu](https://xubuntu.org/). 
 The desktop environment is [XFCE](https://xfce.org/) since it is extreme lightweight, fast and low on system resources. 
 
-The Vagrant base box is the official [Ubuntu 16.04](https://atlas.hashicorp.com/ubuntu/boxes/xenial64) 64-bit box 
+The Vagrant base box is the official [Ubuntu 16.04](https://atlas.hashicorp.com/ubuntu/boxes/xenial64) 64-bit box, 
 available from Hashicorp Atlas.
 
 ## Installation
@@ -38,12 +38,23 @@ Find the scripts within the following folder structure in this repository.
 * provision/scm 		-> select your software configuration management tool
 * provision/lang/cpp	-> select compiler and tools for C++
 
-Clone this repository, then from the repository folder run this command:
+## How to use...
 
-    vagrant up && vagrant reload
+Clone or download this repository and run: 
 
-The `ubuntu` user password is `ubuntu`.
-The `vagrant` user password is `vagrant`.
+    vagrant up
+
+The __ubuntu__ user password is __ubuntu__.
+The __vagrant__ user password is __vagrant__.
+
+### Other useful commands
+
+	vagrant destroy
+	vagrant ssh
+	vagrant provision
+	vagrant suspend
+
+
 
 ## Notes
 
