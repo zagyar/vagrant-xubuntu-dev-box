@@ -15,9 +15,9 @@ Prerequisites:
 
 For Proxy Support:
 
-* [Vagrant Proxy Plugin](). This plugin is needed if the box is spinned up behind proxy. 
+* [Vagrant Proxy Plugin](https://github.com/tmatilai/vagrant-proxyconf). This plugin is necessary whenever you are behind a proxy. 
 
-To install the vagrant proxy plugin run this command:
+Install the vagrant proxy plugin, run this command:
 
 	vagrant plugin install vagrant-proxyconf
 
@@ -27,21 +27,30 @@ The proxy can be configured in the `Vagrantfile`:
 	config.proxy.https    = "http://yourproxy:8080"
 	config.proxy.no_proxy = "localhost,127.0.0.1"
 
+The provision includes several tools and libraries. Include the scripts into the provisioning for the environment as you need.
+Find the scripts within the following folder structure in this repository.
+
+* provision				-> select basic tools
+* provision/db 			-> select your database/s 
+* provision/ide 		-> select your favorite IDE
+* provision/depl 		-> select your deployment tools
+* provision/libs 		-> select libraries (only C++ so far)
+* provision/scm 		-> select your software configuration management tool
+* provision/lang/cpp	-> select compiler and tools for C++
 
 Clone this repository, then from the repository folder run this command:
 
     vagrant up && vagrant reload
 
 The `ubuntu` user password is `ubuntu`.
+The `vagrant` user password is `vagrant`.
 
 ## Notes
 
 * Add your local customisation to `provision/local.sh`.
-* Edit `provision/nodejs.sh` to select your NodeJS version.
 * [nvm](https://github.com/creationix/nvm) is also installed, so it provides another mechanism to switch to other NodeJS versions.
-* The Vagrantfile copies your private key to the VM so you can access Github et al. via SSH. It assumes the private key file can be found in `~/.ssh/id_rsa` on the host machine.
-* You can also SSH to the VM as user `ubuntu`, using `vagrant ssh`
 
 ## Ideas
 
-* the share folder should be accessable with a variable
+* the shared folder should be accessable with a variable
+* testing ansible
