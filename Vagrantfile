@@ -52,6 +52,7 @@ Vagrant.configure(2) do |config|
 
   # PROV: Ruby
   config.vm.provision 'shell', privileged: false, path: 'provision/ruby.sh', name: 'ruby.sh'
+  config.vm.provision 'shell', privileged: false, path: 'provision/jekyll.sh', name: 'jekyll.sh'
 
   # Enhance fonts in xfce4
   # config.vm.provision "shell", inline: "sudo xfconf-query -c xsettings -p /Xft/Antialias -s 1"
