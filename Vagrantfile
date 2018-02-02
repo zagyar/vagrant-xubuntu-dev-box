@@ -27,42 +27,41 @@ Vagrant.configure(2) do |config|
     vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
   end
 
-  # Install xfce and virtualbox additions
-  # config.vm.provision "shell", inline: "sudo apt-get update"
-  # config.vm.provision "shell", inline: "sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11"
-
-
   # Provisioning
-  config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision 'shell', privileged: false, path: 'provision/base.sh', name: 'base.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/xfce4.sh', name: 'xfce4.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/java.sh', name: 'java.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/apps.sh', name: 'apps.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/git.sh', name: 'git.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/google-chrome.sh', name: 'google-chrome.sh'
+  # config.vm.provision "shell", inline: "sudo apt-get update"
+  # config.vm.provision 'shell', privileged: false, path: 'provision/base.sh', name: 'base.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/xfce4.sh', name: 'xfce4.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/jdk.sh', name: 'jdk.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/apps.sh', name: 'apps.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/google-chrome.sh', name: 'google-chrome.sh'
+
+  # PROV: SCM
+  # config.vm.provision 'shell', privileged: false, path: 'provision/scm/git.sh', name: 'git.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/scm/svn.sh', name: 'svn.sh'
 
   # PROV: IDE
-  config.vm.provision 'shell', privileged: false, path: 'provision/atom.sh', name: 'atom.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/eclipse.sh', name: 'eclipse.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/ide/atom.sh', name: 'atom.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/ide/eclipse.sh', name: 'eclipse.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/ide/netbeans.sh', name: 'netbeans.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/ide/vsc.sh', name: 'vsc.sh'
 
-  # Solve Problem with missin Xwrapper.config
-  # config.vm.provision "shell", inline "sudo apt-get install xserver-xorg-legacy"
+  # PROV: C++
+  # config.vm.provision 'shell', privileged: false, path: 'provision/lang/cpp/doxygen.sh', name: 'doxygen.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/lang/cpp/core.sh', name: 'core.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/libs/boost.sh', name: 'boost.sh'
 
-  # config.vm.provision "shell", inline: "sudo VBoxClient --clipboard"
-  # config.vm.provision "shell", inline: "sudo VBoxClient --draganddrop"
-  # config.vm.provision "shell", inline: "sudo VBoxClient --display"
-  # config.vm.provision "shell", inline: "sudo VBoxClient --checkhostversion"
-  # config.vm.provision "shell", inline: "sudo VBoxClient --seamless"
-  
+  # PROV: Ruby
+  config.vm.provision 'shell', privileged: false, path: 'provision/ruby.sh', name: 'ruby.sh'
+
   # Enhance fonts in xfce4
   # config.vm.provision "shell", inline: "sudo xfconf-query -c xsettings -p /Xft/Antialias -s 1"
   # config.vm.provision "shell", inline: "sudo xfconf-query -c xsettings -p /Xft/HintStyle -s hintmedium"
   # config.vm.provision "shell", inline: "sudo xfconf-query -c xsettings -p /Xft/DPI -s 96"
 
   # Permit anyone to start the GUI
-  config.vm.provision "shell", inline: "sudo echo 'allowed_users=anybody' &amp;gt; /etc/X11/Xwrapper.config"
-  config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /home/vagrant/.xsession"
-  config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /root/.xsession"
+  # config.vm.provision "shell", inline: "sudo echo 'allowed_users=anybody' &amp;gt; /etc/X11/Xwrapper.config"
+  # config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /home/vagrant/.xsession"
+  # config.vm.provision "shell", inline: "sudo echo 'xfce4-session' &amp;gt; /root/.xsession"
   
 
 end
