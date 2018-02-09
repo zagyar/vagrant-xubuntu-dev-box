@@ -10,11 +10,11 @@
 # https://sourceforge.net/projects/boost/files/boost/1.65.0/boost_1_65_0.tar.gz
 # https://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz
 
-# Download boost into shared folder
+# Boost variables
 BOOST_URL="https://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz"
 BOOST_VERSION="1_66_0"
 
-# Download Eclipse IDE into shared folder
+# Download boost into shared folder if not available
 if [ ! -f /vagrant_data/boost_$BOOST_VERSION.tar.gz ]; then
   echo 'Downloading Boost ' .$BOOST_VERSION.;
   curl -fsSL --output /vagrant_data/boost_$BOOST_VERSION.tar.gz $BOOST_URL
