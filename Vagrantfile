@@ -12,9 +12,9 @@ Vagrant.configure(2) do |config|
 
   # Proxy Configuration 
   # (expect: vagrant plugin install vagrant-proxyconf)
-  # config.proxy.http     = "http://baligw.mitrais.com:8080"
-  # config.proxy.https    = "http://baligw.mitrais.com:8080"
-  # config.proxy.no_proxy = "localhost,127.0.0.1"
+  config.proxy.http     = "http://baligw.mitrais.com:8080"
+  config.proxy.https    = "http://baligw.mitrais.com:8080"
+  config.proxy.no_proxy = "localhost,127.0.0.1"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -31,15 +31,19 @@ Vagrant.configure(2) do |config|
   # Provisioning
   config.vm.provision "shell", inline: "sudo apt-get update"
   config.vm.provision 'shell', privileged: false, path: 'provision/base.sh', name: 'base.sh'
+  config.vm.provision 'shell', privileged: false, path: 'provision/login.sh', name: 'login.sh' 
   config.vm.provision 'shell', privileged: false, path: 'provision/xfce4.sh', name: 'xfce4.sh'
   # config.vm.provision 'shell', privileged: false, path: 'provision/jdk.sh', name: 'jdk.sh'
   config.vm.provision 'shell', privileged: false, path: 'provision/apps.sh', name: 'apps.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/fonts.sh', name: 'fonts.sh'
-  config.vm.provision 'shell', privileged: false, path: 'provision/local.sh', name: 'local.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/fonts.sh', name: 'fonts.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/local.sh', name: 'local.sh'
   # config.vm.provision 'shell', privileged: false, path: 'provision/google-chrome.sh', name: 'google-chrome.sh'
 
   # PROV: Package Manager
-  config.vm.provision 'shell', privileged: false, path: 'provision/other/snap.sh', name: 'snap.sh'
+  # config.vm.provision 'shell', privileged: false, path: 'provision/other/snap.sh', name: 'snap.sh'
+
+  # PROV: Website Builders
+  config.vm.provision 'shell', privileged: false, path: 'provision/other/hugo.sh', name: 'hugo.sh'
 
   # PROV: Databases
   # config.vm.provision 'shell', privileged: false, path: 'provision/db/mongo.sh', name: 'mongo.sh'
