@@ -59,7 +59,6 @@ The __vagrant__ user password is __vagrant__.
 ## Notes
 
 * Add your local customisation to `provision/local.sh`.
-* [nvm](https://github.com/creationix/nvm) is also installed, so it provides another mechanism to switch to other NodeJS versions.
 
 ## Ideas
 
