@@ -6,3 +6,6 @@
 # Website: https://snapcraft.io/
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install snapd
+
+# Display the versions
+echo -n "Snap Package Manager Version: ";snap --version
