@@ -2,6 +2,9 @@
 # Uninstall openjdk
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y remove openjdk*   
 
+
+sudo DEBIAN_FRONTEND=noninteractive -y install --reinstall ca-certificate
+
 # Add Repo
 sudo add-apt-repository ppa:webupd8team/java
 # Update apt-get
