@@ -6,8 +6,6 @@
 # Website: https://mariadb.org/
 
 
-# Here are the commands to run to install MariaDB on your Ubuntu system:
-sudo apt-get install software-properties-common
 # Get the key for trusted package authentication
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 # Add MariaDB PPA
