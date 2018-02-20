@@ -37,6 +37,8 @@ Find the scripts within the following folder structure in this repository.
 * provision/libs 		-> select libraries (only C++ so far)
 * provision/scm 		-> select your software configuration management tool
 * provision/lang/cpp	-> select compiler and tools for C++
+* provision/lang/go		-> select GO Lang version and tools
+* provision/other		-> everything what fits nowhere else
 
 ## How to use...
 
@@ -54,11 +56,10 @@ The __vagrant__ user password is __vagrant__.
 	vagrant provision
 	vagrant suspend
 
-
-
 ## Notes
 
 * Add your local customisation to `provision/local.sh`.
+* Add additional users into `provision/login.sh`.
 
 ## Ideas
 
